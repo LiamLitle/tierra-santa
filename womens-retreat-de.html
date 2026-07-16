@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Cara — Frauen-Retreat · Tierra Santa</title>
+  <meta name="description" content="Ein 10-tägiger Frauenkreis im Regenwald von Osa, getragen von Gruppenenergie." />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- AMBIENT AUDIO -->
+  <audio id="ambient-audio" loop preload="auto">
+    <source src="image/Bronze_Beneath_the_Leaves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- SOUND TOGGLE -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="Umgebungsklang ein-/ausschalten">
+    <svg id="sound-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path id="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path id="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <span class="sound-dot"></span>
+    <span class="sound-label">Umgebungsklang</span>
+  </button>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index-de.html#home" class="nav-logo-link" aria-label="Tierra Santa — zurück zur Startseite">
+      <img src="image/logo-nav.png" width="374" height="138" alt="Tierra Santa" class="nav-logo-image" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü umschalten" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index-de.html#offering">Private Reise</a></li>
+      <li><a href="index-de.html#place">Der Ort</a></li>
+      <li><a href="index-de.html#guide">Die Begleiterin</a></li>
+      <li><a href="index-de.html#paths">Retreats</a></li>
+      <li class="nav-lang">
+        <a href="womens-retreat.html">EN</a><span>·</span><a href="womens-retreat-de.html" class="lang-active">DE</a><span>·</span><a href="womens-retreat-es.html">ES</a>
+      </li>
+      <li><a href="#join" class="nav-cta">Reservieren</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero hero-photo" id="top" style="background-image: url('image/la_cara-web-2.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">La Cara &middot; Retreat 2 &middot; 23.01. – 02.02.2027 &middot; Max. 8 Gäste</div>
+      <h1><span class="hero-line">Frauen-Retreat</span><span class="hero-line">La Cara</span></h1>
+      <p class="hero-lead">Ein Kreis von Frauen, versammelt in der üppigen, fruchtbaren Umarmung des Regenwaldes von Osa — wo dieselben tiefen Elemente wie in unserem individuellen Heilrahmen in Gruppenenergie getragen werden.</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-primary">Platz reservieren</a>
+        <a href="#circle" class="btn-ghost">Den Kreis entdecken</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARC TRANSITION -->
+  <div class="earth-arc" aria-hidden="true"></div>
+
+  <!-- THE CIRCLE -->
+  <div class="guide" id="circle">
+    <div class="guide-image-wrap">
+      <div class="guide-image">
+        <img src="image/la_cara-web-4.jpg" width="1600" height="1200" alt="Ein Kreis von Frauen versammelt in Tierra Santa" />
+        <div class="img-fade"></div>
+      </div>
+    </div>
+    <div class="guide-body fade-up">
+      <div class="section-label">Der Kreis</div>
+      <h2>Wenn Frauen sich versammeln, hört der Wald zu.</h2>
+      <p>Wir arbeiten mit denselben heiligen Elementen wie in unserem individuellen Heilrahmen, doch hier liegt der Fokus auf der Energie der Gruppe. Gemeinsam ehren wir die Elemente durch Zeremonie, schamanisches Trommeln und Gesang, der das Blut in Wallung bringt, sowie Tänze, die den Körper öffnen, um zu erinnern, was der Verstand vergessen hat.</p>
+      <p>Du gehst mit indigenen Frauen durch den lebendigen Dschungel und lernst von jenen, die dem Wald seit Generationen zuhören.</p>
+    </div>
+  </div>
+
+  <!-- WHAT WE WORK WITH -->
+  <section class="tenets" id="offering">
+    <div class="tenets-intro fade-up">
+      <div class="section-label">Womit wir arbeiten</div>
+      <h2>Sechzehn Türen, ein Kreis.</h2>
+      <p>Unsere Tage sind aus den folgenden Praktiken gewoben — getragen von der Energie der Gruppe, in der die Anwesenheit jeder Frau die anderen trägt.</p>
+      <p class="tenets-note">Bitte hab Verständnis dafür, dass die Reihenfolge der einzelnen Elemente von meinen persönlichen Entscheidungen im Verlauf des Prozesses abhängt — um die Magie des Augenblicks einzufangen und die fortwährende Interaktion mit den Geistern der Ahnen und der Natur zu ehren.</p>
+    </div>
+    <div class="tenets-grid">
+      <div class="tenet fade-up">
+        <div class="tenet-num">01</div>
+        <h3>Zen-Meditation</h3>
+        <p>Stilles Sitzen, das Körper und Geist zurück zum Atem des Waldes bringt.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">02</div>
+        <h3>Kommunikation mit den Ahnen</h3>
+        <p>Angeleitete Praktiken, um die Großmütter und die Ahnenlinie zu ehren, die an unserer Seite geht.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">03</div>
+        <h3>Reiki</h3>
+        <p>Energiearbeit mit Handauflegen, gegeben und empfangen innerhalb des Kreises.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">04</div>
+        <h3>Klangmeditation</h3>
+        <p>Trommeln, Klangschalen und die Stimme des Dschungels — ein Klangbad für das Nervensystem.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">05</div>
+        <h3>Yoga</h3>
+        <p>Sanfte, atemgeführte Bewegung, an die Gruppe angepasst an jedem Tag.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">06</div>
+        <h3>Qi Gong</h3>
+        <p>Langsame, geerdete Formen, um Chi zirkulieren zu lassen und dich mit den Elementen um dich herum auszurichten.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">07</div>
+        <h3>Dschungelwanderungen mit indigenen Frauen</h3>
+        <p>Wanderungen durch den lebendigen Regenwald mit Frauen, die ihm seit Generationen zuhören.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">08</div>
+        <h3>Wissen über tropische Heilpflanzen</h3>
+        <p>Die Namen, Anwendungen und Geister der Pflanzen kennenlernen, die auf der Finca wachsen.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">09</div>
+        <h3>Erd-, Feuer- &amp; Wasserzeremonien</h3>
+        <p>Elementare Rituale im Kreis — um zu erden, loszulassen, zu erneuern.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">10</div>
+        <h3>Arbeit mit Tiergeistern</h3>
+        <p>Begegnung mit den Wächtern, die in Träumen und im Wald erscheinen.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">11</div>
+        <h3>Tarot-Kartenlegungen</h3>
+        <p>Ein intuitiver Spiegel, der hilft zu benennen, was sich bereits in dir bewegt.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">12</div>
+        <h3>Ayurvedisch inspirierte Küche</h3>
+        <p>Nährende, saisonale Mahlzeiten, mit Liebe aus Garten und Land zubereitet.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">13</div>
+        <h3>Individuelle Ernährungsbedürfnisse</h3>
+        <p>Jeder Teller wird an deinen Körper, deine Allergien und deine Art zu essen angepasst.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">14</div>
+        <h3>Nachtwanderung</h3>
+        <p>Der Dschungel nach Einbruch der Dunkelheit — die Dunkelheit wird zur Lehrerin statt zur Angst.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">15</div>
+        <h3>Kakaozeremonie</h3>
+        <p>Ein herzoffenes Ritual mit heiligem Kakao, um den Kreis zu erweichen und zu verbinden.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">16</div>
+        <h3>Baum- &amp; Pflanzengeister der Finca</h3>
+        <p>Begegnungen mit den alten Bäumen und Pflanzenwesen, die dieses Land tragen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN THE CIRCLE -->
+  <section class="contact contact-lacara" id="join">
+    <div class="contact-inner fade-up">
+      <div class="section-label">Dem Kreis beitreten</div>
+      <h2>La Cara &middot; 23.01. – 02.02.2027</h2>
+      <p>Maximal 8 Gäste. Schreib uns, um deinen Platz zu reservieren — wir gestalten die Tage gemeinsam.</p>
+      <a class="contact-email" href="mailto:hola@tierrasantalodge.com?subject=La%20Cara%20%E2%80%94%20Frauen-Retreat">
+        hola@tierrasantalodge.com
+      </a>
+      <div class="contact-location">
+        <a href="index-de.html" style="color:inherit; text-decoration:none;">← Zurück zu Tierra Santa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tierra Santa</div>
+    <ul class="footer-links">
+      <li><a href="index-de.html#offering">Private Reise</a></li>
+      <li><a href="index-de.html#place">Der Ort</a></li>
+      <li><a href="index-de.html#guide">Die Begleiterin</a></li>
+      <li><a href="index-de.html#paths">Retreats</a></li>
+      <li><a href="#join">Kontakt</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Tierra Santa · Alle Rechte vorbehalten</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tierra Santa — Private Heilreisen · Costa Rica</title>
+  <meta name="description" content="Ein intimer, hochwertiger Heilraum im Regenwald von Costa Rica." />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- AMBIENT AUDIO -->
+  <audio id="ambient-audio" loop preload="auto">
+    <source src="image/Bronze_Beneath_the_Leaves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- SOUND TOGGLE -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="Umgebungsklang ein-/ausschalten">
+    <!-- Speaker icon -->
+    <svg id="sound-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path id="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path id="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <span class="sound-dot"></span>
+    <span class="sound-label">Umgebungsklang</span>
+  </button>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#home" class="nav-logo-link" aria-label="Tierra Santa — zurück nach oben">
+      <img src="image/logo-nav.png" width="374" height="138" alt="Tierra Santa" class="nav-logo-image" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü umschalten" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#offering">Private Reise</a></li>
+      <li><a href="#place">Der Ort</a></li>
+      <li><a href="#guide">Die Begleiterin</a></li>
+      <li><a href="#paths">Retreats</a></li>
+      <li class="nav-lang">
+        <a href="index.html">EN</a><span>·</span><a href="index-de.html" class="lang-active">DE</a><span>·</span><a href="index-es.html">ES</a>
+      </li>
+      <li><a href="#contact" class="nav-cta">Ein Gespräch beginnen</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <video autoplay muted loop playsinline>
+      <source src="image/download.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">Private Heilreisen &middot; Auf Einladung</div>
+      <h1><span class="hero-line">Für die Vorreiter</span><span class="hero-line">der Neuen Erde</span></h1>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Ein Gespräch beginnen</a>
+        <a href="#offering" class="btn-ghost">Die Reise entdecken</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ARC TRANSITION -->
+  <div class="earth-arc" aria-hidden="true"></div>
+
+  <!-- KATHRIN WELCOME -->
+  <div class="kathrin-welcome" id="welcome">
+    <div class="kathrin-welcome-image-wrap">
+      <img src="image/kathrin-portrait.png" width="2320" height="1824" alt="Kathrin Schmack" />
+    </div>
+    <div class="kathrin-welcome-body fade-up">
+      <div class="kathrin-welcome-copy">
+        <p class="kathrin-welcome-text">Hallo, ich bin Kathrin. Willkommen! Ich höre auf die Erde und stelle meine Hände in den Dienst deiner Heilung.</p>
+        <ul class="kathrin-welcome-list">
+          <li><strong>Die Praxis:</strong> Ich nutze Feng Shui, Reiki und weitere Methoden, um einen sanften Raum für stille, dauerhafte Veränderung zu schaffen.</li>
+          <li><strong>Das heilige Land:</strong> Tierra Santa steht auf angestammtem Gebiet, das der Nation der Ngäbe-Buglé seit jeher heilig ist.</li>
+          <li><strong>Das Vertrauen:</strong> Nach Jahren gegenseitigen Respekts fühle ich mich zutiefst geehrt, von diesen indigenen Weisheitshütern als Anführerin anerkannt zu sein.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TENETS -->
+  <section class="tenets" id="offering">
+    <div class="tenets-intro fade-up">
+      <div class="section-label">Das Versprechen von Blue Morpho</div>
+      <h2>Ein hochwertiger Rahmen für alle, die sich nach <em class="tenets-highlight">echter Veränderung</em> sehnen.</h2>
+      <p>Es folgen die vier Grundsätze von Blue Morpho — der individuellen Heilreise im Herzen von Tierra Santa.</p>
+    </div>
+    <div class="tenets-grid">
+      <div class="tenet fade-up">
+        <div class="tenet-num">01</div>
+        <h3>Eine Seele nach der anderen</h3>
+        <p>Jede Reise wird um eine Person oder ein Paar herum gestaltet. Keine Gruppen, keine geteilte Agenda — nur dein Nervensystem, deine Geschichte, deine Geister.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">02</div>
+        <h3>Ein Raum, der die halbe Arbeit übernimmt</h3>
+        <p>Das Land, die Architektur und die Stille hier sind nicht nur der Rahmen der Heilung — sie sind Teil von ihr.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">03</div>
+        <h3>Getragen von Tradition</h3>
+        <p>Reiki, schamanische Praxis, Ahnenarbeit, Feng Shui und 5-dimensionales Design — verwoben zu einer einzigen, lebendigen Praxis.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">04</div>
+        <h3>Für jene, die führen</h3>
+        <p>Ein Angebot für die Erbauer, Gründerinnen, Heiler und Ältesten dessen, was als Nächstes kommt — Menschen, deren eigene Klarheit Wellen in der Welt schlägt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <div class="experience">
+    <div class="experience-image-wrap">
+      <div class="experience-image">
+        <img src="image/templito.png" width="2390" height="1792" alt="Tierra-Santa-Architektur bei Sonnenuntergang" />
+        <div class="img-fade"></div>
+      </div>
+    </div>
+    <div class="experience-body fade-up">
+      <div class="section-label">Das Kernangebot · Nach Vereinbarung · Ganzjährig</div>
+      <h2>Individuelle Heilung. Blue Morpho.</h2>
+      <p>Ein vollständig privater Rahmen für eine Person oder ein Paar. Jeder Tag wird um dich herum gestaltet — deinen Körper, deine Ahnen, deine Bereitschaft. Sechzehn heilige Praktiken, verwoben im Rhythmus des Augenblicks: Zen-Meditation, Reiki, Ahnenarbeit, Klang, Yoga, Qi Gong, Wissen über Heilpflanzen, Feuer- und Wasserzeremonien, Kakao, Tarot, Arbeit mit den Baum- und Tiergeistern der Finca sowie eine an deinen Körper angepasste, ayurvedisch inspirierte Küche.</p>
+      <p>Ein hochpreisiges, hochwertiges Angebot — aufgebaut auf jahrzehntelanger Praxis und jenen vorbehalten, die bereit sind, in eine wahre Schwelle zu investieren.</p>
+      <a href="#contact" class="btn-primary">Eine Einladung anfragen →</a>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="testimonial-glow"></div>
+    <div class="testimonial-inner fade-up">
+      <div class="testimonial-title">Was Gäste mit nach Hause nehmen.</div>
+      <p class="testimonial-text">Vor meiner Reise nach Costa Rica trug ich schwere Ängste in mir und fühlte mich mir selbst entfremdet. Die Verbindung aus unberührter Natur, der atemberaubenden Architektur, die symbiotisch aus dem Land wächst — von Kathrin geschaffen —, und ihrer individuellen, spirituellen und zutiefst persönlichen Begleitung brachte mich zurück ins Gleichgewicht, löste lang gehegte Ängste und schenkte mir einen völlig neuen Blick auf die Welt und eine erneuerte Ehrfurcht vor der Natur. Ich bin inspiriert, neu ausgerichtet und dauerhaft von quälenden Ängsten geheilt — eine Heilung ganz besonderer Art, die man nirgendwo sonst in dieser Reinheit und Vollständigkeit findet.</p>
+      <div class="testimonial-attr">— Privater Blue-Morpho-Gast · 10-tägige Einzelreise</div>
+    </div>
+  </section>
+
+  <!-- THE PLACE -->
+  <section class="place" id="place">
+    <div class="place-header">
+      <div class="fade-up">
+        <div class="section-label">Der Ort</div>
+        <h2>Eine 5-dimensionale Architektur, ausgerichtet am Orionsgürtel.</h2>
+      </div>
+      <div class="fade-up">
+        <p>Dies ist keine Lodge. Es ist ein magischer Ort, den ich entworfen und erbaut habe, um Transformation zu tragen. Die Kraft des Universums — getragen durch den Orionsgürtel — trifft hier auf die lebendige Kraft der Erde, und die Architektur selbst wird zur Mitheilerin.</p>
+        <p style="margin-top:16px;">In jedem Winkel, jeder Schwelle und jeder Sichtachse ist heiliges Wissen eingebettet — und genau dieses Wissen nutze ich heute, um jene zu begleiten, die kommen.</p>
+      </div>
+    </div>
+    <div class="place-images fade-up">
+      <div class="place-img"><img src="image/villas-web-1.jpg" width="1049" height="1400" alt="Tierra-Santa-Villa zur goldenen Stunde" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/villas-web-2.jpg" width="1400" height="1049" alt="Tierra-Santa-Villa zur goldenen Stunde" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/villas-web-3.jpg" width="1400" height="1049" alt="Tierra-Santa-Villa zur goldenen Stunde" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/villas-web-4.jpg" width="1049" height="1400" alt="Tierra-Santa-Villa zur goldenen Stunde" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/villas-web-5.jpg" width="1049" height="1400" alt="Tierra-Santa-Villa zur goldenen Stunde" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/villas-web-6.jpg" width="1049" height="1400" alt="Tierra-Santa-Villa zur goldenen Stunde" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/villas-web-7.jpg" width="1049" height="1400" alt="Tierra-Santa-Villa zur goldenen Stunde" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/villas-web-8.jpg" width="1049" height="1400" alt="Tierra-Santa-Villa zur goldenen Stunde" /><div class="img-fade"></div></div>
+    </div>
+  </section>
+
+  <!-- IN SACRED ALLIANCE — the Ngäbe-Buglé -->
+  <section class="place" id="sacred-alliance">
+    <div class="place-header">
+      <div class="fade-up">
+        <div class="section-label">In heiliger Verbundenheit</div>
+        <h2>Die Ngäbe-Buglé — Hüter der Weisheit dieses Landes.</h2>
+      </div>
+      <div class="fade-up">
+        <p>Tierra Santa steht auf Land, das den Ngäbe-Buglé, der größten indigenen Nation Costa Ricas und Panamas, seit jeher heilig ist. Seit Jahren gehe ich an der Seite ihrer Ältesten, Heiler und Gesangshüter — und empfange Lehren über die Heilpflanzen des Regenwaldes, die Geister der Flüsse und Berge sowie die uralten Feuer-, Erd- und Wasserzeremonien, die in der Diquís-Region noch immer lebendig sind.</p>
+        <p style="margin-top:16px;">Dies ist keine Folklore. Es ist eine lebendige Tradition. Ihre Großzügigkeit, ihr Vertrauen und ihre fortwährende Präsenz sind in jede Heilreise eingewoben, die hier stattfindet.</p>
+      </div>
+    </div>
+    <div class="place-images place-images-3 fade-up">
+      <div class="place-img"><img src="image/the-place-web-1.jpg" width="1024" height="689" alt="Kathrin mit Ältesten und der Gemeinschaft der Ngäbe-Buglé auf der Finca" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/the-place-web-2.jpg" width="1400" height="1152" alt="Kathrin am Feuer mit Weisheitshütern der Ngäbe-Buglé" /><div class="img-fade"></div></div>
+      <div class="place-img"><img src="image/the-place-web-3.jpg" width="1096" height="1400" alt="Eine Weisheitshüterin der Ngäbe-Buglé dokumentiert heilige Lehren" /><div class="img-fade"></div></div>
+    </div>
+    <div class="sacred-alliance-quote-wrap fade-up">
+      <blockquote class="intro-quote">
+        „Das Land erinnert sich. Die Ältesten erinnern sich. Wir sind nur die Brücke."
+        <cite>— eine auf der Finca empfangene Lehre</cite>
+      </blockquote>
+    </div>
+    <div class="sacred-alliance-list-wrap fade-up">
+      <div class="section-label">Wie sie die Reisen begleiten</div>
+      <ul class="dash-list sacred-alliance-list">
+        <li>Weisheitshüter des Stammes sind als Wächter und Mitbegleiter während der Zeremonien anwesend.</li>
+        <li>Lehren über die Heilpflanzen und Bäume der Halbinsel Osa.</li>
+        <li>Gesänge, Gebete und Opfergaben in der Ngäbere-Sprache, um heiligen Raum zu öffnen und zu schließen.</li>
+        <li>Anleitung in den Feuer-, Erd- und Wasserzeremonien, die in ihrer Tradition weitergegeben werden.</li>
+        <li>Erlaubnis und Segen der Ältesten für jeden Gast, der dieses Land betritt.</li>
+        <li>Eine wechselseitige Beziehung — ein Teil jeder Reise unterstützt ihre Gemeinschaft.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- THE GUIDE -->
+  <div class="guide" id="guide">
+    <div class="guide-image-wrap">
+      <div class="guide-image">
+        <img src="image/kathrin2-web.jpg" width="1008" height="1792" alt="Kathrin Schmack" />
+        <div class="img-fade"></div>
+      </div>
+    </div>
+    <div class="guide-body fade-up">
+      <div class="section-label">Die Begleiterin</div>
+      <h2>Kathrin Schmack.</h2>
+      <div class="guide-subtitle">Architektin · Feng-Shui-Meisterin · Autorin · Gründerin</div>
+      <p>Seit drei Jahrzehnten hat sich Kathrin leise einen internationalen Ruf als eine der wenigen Praktikerinnen erarbeitet, die die Strenge europäischer Architektur mit der Raumweisheit des Ostens vereinen. Als ausgebildete deutsche Innenarchitektin, 1997 mit dem Deutschen Innenarchitekturpreis ausgezeichnet, studierte sie anschließend viele Jahre bei Grandmaster Yap Cheng Hai — einer der bedeutendsten Autoritäten des klassischen Feng Shui — und wurde in dieser Tradition als Feng-Shui-Meisterin zertifiziert.</p>
+      <p>Aus dieser Begegnung der Disziplinen entwickelte sie SpiritPlanning®, ihre eigene architektonische Methode: eine Synthese aus daoistischer Harmonie und westlicher Baukultur, die private Wohnhäuser ebenso wie öffentliche Projekte geprägt hat. Sie ist Gründerin der Genius Loci Baukultur GmbH, Autorin von SpiritPlanning: CoCreation und Dozentin an der Peter Behrens School of Arts in Düsseldorf.</p>
+      <p>Feng Shui ist in seiner ursprünglichen Form keine Dekoration — es ist schamanisches Wissen, eine indigene Kenntnis davon, wie die lebendigen Kräfte von Land, Ahnen und Kosmos ein menschliches Leben formen. Dreißig Jahre innerhalb dieser Tradition wurden zu Kathrins Brücke zu den Ngäbe-Buglé: In diesem Wissen begegnen sie und die Weisheitshüter des Stammes einander auf Augenhöhe, denn — jenseits unterschiedlicher Sprachen und Landschaften — ist es dasselbe Wissen.</p>
+      <p>Heute lebt und arbeitet sie auf der Halbinsel Osa in Costa Rica, wo sie Tierra Santa entworfen und erbaut hat — eine 5-dimensionale heilige Architektur — und wo sie, ausschließlich nach Vereinbarung, die individuellen Heilreisen jener begleitet, die auf der Suche nach echter Veränderung kommen.</p>
+      <div class="guide-quote">
+        „Lasst uns die Zukunft auf uraltem Wissen erbauen. Jedes Zuhause ist ein Tempel — und jeder Tempel ein Weg zurück zu uns selbst."
+        <cite>— Kathrin Schmack</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE GUIDE — continued: beach quote, credentials, spiritual vita -->
+  <section class="guide-extra" id="guide-more">
+    <div class="guide-photo-quote fade-up">
+      <img src="image/kathrin_section.jpg" width="2540" height="1664" alt="Kathrin Schmack geht bei Sonnenuntergang an einem Pazifikstrand auf der Halbinsel Osa entlang, mit ihren Worten: Mein Weg von Deutschland hierher auf die Halbinsel Osa fühlt sich an wie die Verschmelzung von Intuition und physikalischem Gesetz." />
+    </div>
+    <div class="guide-extra-block fade-up">
+      <div class="section-label">Qualifikationen &amp; Auszeichnungen</div>
+      <ul class="dash-list guide-extra-list">
+        <li>Mitglied, Architektenkammer Nordrhein-Westfalen</li>
+        <li>Mitglied, Bund Deutscher Innenarchitekten (BDIA)</li>
+        <li>Mitglied, Verband Deutscher Architekten (VDA NW)</li>
+        <li>Bauvorlageberechtigung — vollständig zur Einreichung von Bauunterlagen befugt</li>
+        <li>Feng-Shui-Meisterin in der Tradition von Yap Cheng Hai</li>
+        <li>Autorin, SpiritPlanning: CoCreation (2024)</li>
+        <li>Bronzemedaille, Ruder-Weltmeisterschaft 1988 (Leichtgewichts-Vierer)</li>
+      </ul>
+    </div>
+    <div class="guide-extra-block fade-up">
+      <div class="section-label">Eine spirituelle Vita</div>
+      <p>Bei den Ngäbe als „die Reine" bekannt, versteht sich Kathrin als eine indigene, transkulturelle weibliche Präsenz mit europäischen Wurzeln. Nach einer Initiation mit dem Puma-Geist am Strand von Matapalo begann sie ein langes Studium des I Ging und überträgt derzeit dessen vierundsechzig Hexagramme in ein Kalendersystem innerhalb einer erweiterten räumlichen Dimension — ein Werk, das sie den Kindern der Welt widmet.</p>
+      <p style="margin-top:16px;">Ihre Praxis geht an der Seite indigener Ältester, Ökologen und Pädagogen und wurzelt in der Überzeugung, dass die Natur selbst die letzte Lehrerin ist.</p>
+    </div>
+  </section>
+
+  <!-- JOURNEY STEPS -->
+  <section class="journey">
+    <div class="journey-intro fade-up">
+      <div class="section-label">Der Ablauf</div>
+      <h2>Wie ein privater Aufenthalt sich entfaltet.</h2>
+    </div>
+    <div class="steps">
+      <div class="step fade-up">
+        <div class="step-num">01</div>
+        <h3>Ein Gespräch</h3>
+        <p>Jede Reise beginnt mit einem persönlichen Gespräch. Keine Buchung ohne dieses — wir hören genau hin, ob es passt.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">02</div>
+        <h3>Ankunft</h3>
+        <p>Du wirst empfangen, mit Kakao willkommen geheißen und in einer privaten Villa unter dem Blätterdach eingerichtet.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">03</div>
+        <h3>Die Arbeit</h3>
+        <p>Tage, die sich um dich gestalten. Zeremonie, Ruhe, Integration — im eigenen Rhythmus des Landes.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">04</div>
+        <h3>Rückkehr</h3>
+        <p>Du reist mit Praktiken, nicht mit Versprechen. Integrationsgespräche begleiten dich drei Monde lang nach Hause.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER PATHS -->
+  <section class="paths" id="paths">
+    <div class="paths-header fade-up">
+      <div class="section-label">Weitere Wege</div>
+      <h2>Drei weitere Türen in die Arbeit.</h2>
+      <p>Neben den privaten Reisen angeboten, für jene, die sich zu einem Kreis, einer Gruppe oder der Architektur selbst hingezogen fühlen.</p>
+    </div>
+    <div class="paths-grid">
+      <a class="path-card fade-up" href="womens-retreat-de.html">
+        <div class="path-tag">Frauen-Retreat</div>
+        <h3>La Cara</h3>
+        <div class="path-date">23.01. – 02.02.2027 · Max. 8 Gäste</div>
+        <p>Ein intimer Kreis von Frauen, getragen vom Regenwald. Die gleichen heiligen Elemente wie die private Reise, mit Fokus auf Gruppenenergie.</p>
+        <span class="path-link">Mehr erfahren →</span>
+      </a>
+      <a class="path-card fade-up" href="group-retreat-de.html">
+        <div class="path-tag">Gruppen-Retreat</div>
+        <h3>El Jaguar</h3>
+        <div class="path-date">04. – 14.01.2027 · Max. 8 Gäste</div>
+        <p>Ein Gruppenrahmen unter dem wachsamen Geist des Jaguars — Trommeln, Zeremonie und gemeinsame Geschichten am Feuer.</p>
+        <span class="path-link">Mehr erfahren →</span>
+      </a>
+      <a class="path-card fade-up" href="spiritplanning-de.html">
+        <div class="path-tag">Fachworkshop</div>
+        <h3>SpiritPlanning</h3>
+        <div class="path-date">Seminare 2026 / 2027 · Max. 8 Teilnehmende</div>
+        <p>Ein Fachworkshop für Architekten, Designerinnen und Liebhaber heilender Räume — das Wissen hinter Tierra Santa selbst.</p>
+        <span class="path-link">Mehr erfahren →</span>
+      </a>
+    </div>
+    <div class="paths-download fade-up">
+      <a href="Tierra-Santa-Womens-Retreat-Pricelist-Restyled.pdf" class="btn-ghost-dark" download>↓ Preisliste herunterladen — Frauen-Retreat (PDF)</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner fade-up">
+      <div class="section-label">Auf Einladung</div>
+      <h2>Komm, wenn die Zeit richtig ist.</h2>
+      <p>Private Reisen werden über ein persönliches Gespräch vereinbart. Schreib mir in deinen eigenen Worten — ich lese jeden Brief.</p>
+      <a class="contact-email" href="mailto:hola@tierrasantalodge.com?subject=Private%20Heilreise">
+        hola@tierrasantalodge.com
+      </a>
+      <div class="contact-location">Halbinsel Osa · Costa Rica</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tierra Santa</div>
+    <ul class="footer-links">
+      <li><a href="#offering">Private Reise</a></li>
+      <li><a href="#place">Der Ort</a></li>
+      <li><a href="#guide">Die Begleiterin</a></li>
+      <li><a href="#paths">Retreats</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Tierra Santa · Alle Rechte vorbehalten</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
