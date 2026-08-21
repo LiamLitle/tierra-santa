@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Únete al Círculo · Tierra Santa</title>
+  <meta name="description" content="Únete al Círculo de Tierra Santa — noticias de nuestra finca en la selva de Osa y próximos retiros de mujeres, unas pocas veces al año." />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+  <style>
+    .circle-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream-bg);
+      padding: 10rem 2rem 6rem;
+    }
+    .circle-card {
+      max-width: 640px;
+      text-align: center;
+    }
+    .circle-card h1 {
+      font-family: 'Italiana', serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--text-dark);
+      margin: 1.2rem 0 1.6rem;
+      line-height: 1.1;
+    }
+    .circle-card > p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: var(--text-dark-2);
+      margin-bottom: 2.8rem;
+    }
+    .circle-form {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.4rem;
+    }
+    .circle-form input[type="email"] {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--sacred-earth);
+      padding: 0.7rem 0.4rem;
+      min-width: 260px;
+      outline: none;
+    }
+    .circle-form input[type="email"]::placeholder { color: var(--text-dark-muted); }
+    .circle-form input[type="email"]:focus { border-bottom-color: var(--deep-canopy); }
+    .circle-note {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--text-dark-muted);
+    }
+    .circle-back {
+      display: inline-block;
+      margin-top: 3rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dark-2);
+      text-decoration: none;
+    }
+    .circle-back:hover { color: var(--deep-canopy); }
+  </style>
+</head>
+<body>
+
+  <!-- AMBIENT AUDIO -->
+  <audio id="ambient-audio" loop preload="auto">
+    <source src="image/Bronze_Beneath_the_Leaves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- SOUND TOGGLE -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="Alternar sonido ambiental">
+    <svg id="sound-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path id="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path id="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <span class="sound-dot"></span>
+    <span class="sound-label">Ambient Sound</span>
+  </button>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index-es.html#home" class="nav-logo-link" aria-label="Tierra Santa — volver al inicio">
+      <img src="image/logo-nav.png" width="374" height="138" alt="Tierra Santa" class="nav-logo-image" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Alternar menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index-es.html#offering">Viaje Privado</a></li>
+      <li><a href="index-es.html#place">El Lugar</a></li>
+      <li><a href="index-es.html#guide">La Guía</a></li>
+      <li><a href="index-es.html#paths">Retiros</a></li>
+      <li class="nav-lang">
+        <a href="circle.html">EN</a><span>·</span><a href="circle-de.html">DE</a><span>·</span><a href="circle-es.html" class="lang-active">ES</a>
+      </li>
+      <li><a href="womens-retreat-es.html" class="nav-cta">La Cara 2027</a></li>
+    </ul>
+  </nav>
+
+  <!-- ÚNETE AL CÍRCULO -->
+  <section class="circle-page">
+    <div class="circle-card fade-up">
+      <div class="section-label">El Círculo de Tierra Santa</div>
+      <h1>Cuando las mujeres se reúnen,<br />la selva escucha.</h1>
+      <p>Noticias de nuestra finca en la selva de Osa, próximos retiros de mujeres e historias de la selva — unas pocas veces al año, solo cuando tenemos algo que contar.</p>
+
+      <form class="circle-form" id="circle-form" action="https://tierra-santa-lodge-kgep3l.subscribepage.io/" method="get">
+        <input type="email" name="email" placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" required />
+        <button type="submit" class="btn-primary">Únete al círculo</button>
+      </form>
+      <div class="circle-note">Recibirás un correo de confirmación. Sin ruido, sin spam — puedes dejar el círculo cuando quieras.</div>
+
+      <a class="circle-back" href="index-es.html">← Volver a Tierra Santa</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tierra Santa</div>
+    <ul class="footer-links">
+      <li><a href="index-es.html#offering">Viaje Privado</a></li>
+      <li><a href="index-es.html#place">El Lugar</a></li>
+      <li><a href="index-es.html#guide">La Guía</a></li>
+      <li><a href="index-es.html#paths">Retiros</a></li>
+      <li><a href="index-es.html#contact">Contacto</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Tierra Santa · Todos los derechos reservados</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

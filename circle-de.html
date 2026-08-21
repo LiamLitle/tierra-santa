@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dem Kreis beitreten · Tierra Santa</title>
+  <meta name="description" content="Tritt dem Tierra Santa Kreis bei — Neuigkeiten von unserer Finca im Osa-Regenwald und kommende Frauen-Retreats, einige Male im Jahr." />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+  <style>
+    .circle-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream-bg);
+      padding: 10rem 2rem 6rem;
+    }
+    .circle-card {
+      max-width: 640px;
+      text-align: center;
+    }
+    .circle-card h1 {
+      font-family: 'Italiana', serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--text-dark);
+      margin: 1.2rem 0 1.6rem;
+      line-height: 1.1;
+    }
+    .circle-card > p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: var(--text-dark-2);
+      margin-bottom: 2.8rem;
+    }
+    .circle-form {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.4rem;
+    }
+    .circle-form input[type="email"] {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--sacred-earth);
+      padding: 0.7rem 0.4rem;
+      min-width: 260px;
+      outline: none;
+    }
+    .circle-form input[type="email"]::placeholder { color: var(--text-dark-muted); }
+    .circle-form input[type="email"]:focus { border-bottom-color: var(--deep-canopy); }
+    .circle-note {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--text-dark-muted);
+    }
+    .circle-back {
+      display: inline-block;
+      margin-top: 3rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dark-2);
+      text-decoration: none;
+    }
+    .circle-back:hover { color: var(--deep-canopy); }
+  </style>
+</head>
+<body>
+
+  <!-- AMBIENT AUDIO -->
+  <audio id="ambient-audio" loop preload="auto">
+    <source src="image/Bronze_Beneath_the_Leaves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- SOUND TOGGLE -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="Umgebungsklang umschalten">
+    <svg id="sound-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path id="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path id="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <span class="sound-dot"></span>
+    <span class="sound-label">Ambient Sound</span>
+  </button>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index-de.html#home" class="nav-logo-link" aria-label="Tierra Santa — zurück zur Startseite">
+      <img src="image/logo-nav.png" width="374" height="138" alt="Tierra Santa" class="nav-logo-image" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü umschalten" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index-de.html#offering">Private Reise</a></li>
+      <li><a href="index-de.html#place">Der Ort</a></li>
+      <li><a href="index-de.html#guide">Die Begleiterin</a></li>
+      <li><a href="index-de.html#paths">Retreats</a></li>
+      <li class="nav-lang">
+        <a href="circle.html">EN</a><span>·</span><a href="circle-de.html" class="lang-active">DE</a><span>·</span><a href="circle-es.html">ES</a>
+      </li>
+      <li><a href="womens-retreat-de.html" class="nav-cta">La Cara 2027</a></li>
+    </ul>
+  </nav>
+
+  <!-- DEM KREIS BEITRETEN -->
+  <section class="circle-page">
+    <div class="circle-card fade-up">
+      <div class="section-label">Der Tierra Santa Kreis</div>
+      <h1>Wenn Frauen zusammenkommen,<br />hört der Wald zu.</h1>
+      <p>Neuigkeiten von unserer Finca im Osa-Regenwald, kommende Frauen-Retreats und Geschichten aus dem Dschungel — einige Male im Jahr, nur wenn wir etwas zu erzählen haben.</p>
+
+      <form class="circle-form" id="circle-form" action="https://tierra-santa-lodge-kgep3l.subscribepage.io/" method="get">
+        <input type="email" name="email" placeholder="Deine E-Mail" aria-label="Deine E-Mail" required />
+        <button type="submit" class="btn-primary">Dem Kreis beitreten</button>
+      </form>
+      <div class="circle-note">Es folgt eine Bestätigungs-E-Mail. Kein Lärm, kein Spam — du kannst den Kreis jederzeit verlassen.</div>
+
+      <a class="circle-back" href="index-de.html">← Zurück zu Tierra Santa</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tierra Santa</div>
+    <ul class="footer-links">
+      <li><a href="index-de.html#offering">Private Reise</a></li>
+      <li><a href="index-de.html#place">Der Ort</a></li>
+      <li><a href="index-de.html#guide">Die Begleiterin</a></li>
+      <li><a href="index-de.html#paths">Retreats</a></li>
+      <li><a href="index-de.html#contact">Kontakt</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Tierra Santa · Alle Rechte vorbehalten</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
