@@ -79,87 +79,6 @@
     });
 
     /* ─────────────────────────────────────────
-       5. H2 TITLES — word-by-word float from mist
-    ───────────────────────────────────────── */
-    document.querySelectorAll('h2').forEach(el => {
-      if (el.closest('.hero')) return;
-      const split = new SplitType(el, { types: 'words' });
-      gsap.from(split.words, {
-        y: 52,
-        opacity: 0,
-        filter: 'blur(18px)',
-        duration: 1.7,
-        stagger: { each: 0.11, ease: 'power1.inOut' },
-        ease: 'expo.out',
-        immediateRender: false,
-        onComplete() { gsap.set(split.words, { filter: 'none' }); },
-        scrollTrigger: { trigger: el, start: 'top 87%', once: true }
-      });
-    });
-
-    /* ─────────────────────────────────────────
-       6. H3 IN CARDS — chars crystallise from blur
-    ───────────────────────────────────────── */
-    document.querySelectorAll('.tenet h3, .step h3, .path-card h3').forEach(el => {
-      const split = new SplitType(el, { types: 'chars' });
-      gsap.from(split.chars, {
-        y: 18, opacity: 0, filter: 'blur(8px)',
-        duration: 0.85, stagger: 0.028, ease: 'expo.out',
-        immediateRender: false,
-        onComplete() { gsap.set(split.chars, { filter: 'none' }); },
-        scrollTrigger: { trigger: el, start: 'top 91%', once: true }
-      });
-    });
-
-    /* ─────────────────────────────────────────
-       7. SECTION LABELS — drift up from haze
-    ───────────────────────────────────────── */
-    gsap.utils.toArray('.section-label').forEach(el => {
-      gsap.from(el, {
-        y: 22, opacity: 0, filter: 'blur(10px)',
-        duration: 1.3, ease: 'expo.out',
-        immediateRender: false,
-        onComplete() { gsap.set(el, { filter: 'none' }); },
-        scrollTrigger: { trigger: el, start: 'top 93%', once: true }
-      });
-    });
-
-    /* ─────────────────────────────────────────
-       8. PARAGRAPHS — gentle float through mist
-    ───────────────────────────────────────── */
-    gsap.utils.toArray('p:not(.hero-sub):not(.testimonial-text)').forEach(el => {
-      gsap.from(el, {
-        y: 28, opacity: 0, filter: 'blur(8px)',
-        duration: 1.4, ease: 'expo.out',
-        immediateRender: false,
-        onComplete() { gsap.set(el, { filter: 'none' }); },
-        scrollTrigger: { trigger: el, start: 'top 95%', once: true }
-      });
-    });
-
-    /* ─────────────────────────────────────────
-       9. QUOTES — rise slowly through haze
-    ───────────────────────────────────────── */
-    gsap.utils.toArray('.intro-quote').forEach(el => {
-      gsap.from(el, {
-        y: 40, opacity: 0, filter: 'blur(14px)',
-        duration: 1.8, ease: 'expo.out',
-        immediateRender: false,
-        onComplete() { gsap.set(el, { filter: 'none' }); },
-        scrollTrigger: { trigger: el, start: 'top 91%', once: true }
-      });
-    });
-    gsap.utils.toArray('.guide-quote').forEach(el => {
-      gsap.from(el, {
-        x: -28, y: 12, opacity: 0, filter: 'blur(12px)',
-        duration: 1.6, ease: 'expo.out',
-        immediateRender: false,
-        onComplete() { gsap.set(el, { filter: 'none' }); },
-        scrollTrigger: { trigger: el, start: 'top 90%', once: true }
-      });
-    });
-
-    /* ─────────────────────────────────────────
        10. IMAGES — crystallise from deep blur
     ───────────────────────────────────────── */
     gsap.utils.toArray('.place-img, .experience-image, .guide-image').forEach((el, i) => {
@@ -172,36 +91,6 @@
         }
       );
     });
-
-    /* ─────────────────────────────────────────
-       11. CARDS — staggered mist emergence
-    ───────────────────────────────────────── */
-    ['.tenets-grid .tenet', '.steps .step', '.paths-grid .path-card'].forEach(sel => {
-      const els = gsap.utils.toArray(sel);
-      if (!els.length) return;
-      gsap.from(els, {
-        y: 55, opacity: 0, filter: 'blur(14px)',
-        duration: 1.3, stagger: 0.14, ease: 'expo.out',
-        immediateRender: false,
-        onComplete() { gsap.set(els, { filter: 'none' }); },
-        scrollTrigger: { trigger: els[0].parentElement, start: 'top 85%', once: true }
-      });
-    });
-
-    /* ─────────────────────────────────────────
-       12. TESTIMONIAL — words surface one by one
-    ───────────────────────────────────────── */
-    const testText = document.querySelector('.testimonial-text');
-    if (testText) {
-      const split = new SplitType(testText, { types: 'words' });
-      gsap.from(split.words, {
-        y: 20, opacity: 0, filter: 'blur(10px)',
-        duration: 0.9, stagger: 0.028, ease: 'power3.out',
-        immediateRender: false,
-        onComplete() { gsap.set(split.words, { filter: 'none' }); },
-        scrollTrigger: { trigger: testText, start: 'top 87%', once: true }
-      });
-    }
 
     setTimeout(() => ScrollTrigger.refresh(), 300);
 
@@ -281,3 +170,55 @@
     lenis.on('scroll', tryStart);
     document.addEventListener('pointerdown', tryStart, { once: true });
   });
+
+
+/* ─────────────────────────────────────────
+   GALLERY LIGHTBOX — click to enlarge
+   Scoped to "The Place" and "In Sacred
+   Alliance" (Ngäbe-Buglé) photo galleries.
+   Deliberately standalone and independent of
+   GSAP/Lenis/ScrollTrigger — those load from
+   external CDNs and can fail to load (ad
+   blockers, slow networks, corporate
+   firewalls). This must keep working even
+   when they don't.
+───────────────────────────────────────── */
+(function () {
+  function init() {
+    const lightbox     = document.getElementById('lightbox');
+    const lightboxImg   = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    if (!lightbox || !lightboxImg) return;
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-locked');
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-locked');
+    }
+
+    document.querySelectorAll('#place .place-img img, #sacred-alliance .place-img img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(img.currentSrc || img.src, img.alt));
+    });
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    // Click anywhere on the dark backdrop (outside the card) closes it
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
