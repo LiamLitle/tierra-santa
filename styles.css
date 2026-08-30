@@ -25,7 +25,7 @@ html { scroll-behavior: auto !important; }
       --text-muted: rgba(245,241,230,0.42);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; } /* Fix: mobile Safari/Chrome was expanding the layout viewport to fit full-bleed decorative elements (.earth-arc etc.) that are wider than the screen with negative margins -- overflow-x:hidden on body alone does not stop this, it must also be on html. That desync made every @media(max-width:900px) mobile rule below never activate, leaving the full desktop layout squeezed onto phones (empty gaps on the right edge, tiny/broken-looking buttons). */
 
     body {
       font-family: 'Jost', sans-serif;
