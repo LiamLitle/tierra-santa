@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Jaguar — Group Retreat · Tierra Santa</title>
+  <meta name="description" content="A 10-day group retreat on the Osa Peninsula held in group energy under the watchful spirit of the jaguar." />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- AMBIENT AUDIO -->
+  <audio id="ambient-audio" loop preload="auto">
+    <source src="image/Bronze_Beneath_the_Leaves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- SOUND TOGGLE -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="Toggle ambient sound">
+    <svg id="sound-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path id="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path id="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <span class="sound-dot"></span>
+    <span class="sound-label">Ambient Sound</span>
+  </button>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html#home" class="nav-logo-link" aria-label="Tierra Santa — back to home">
+      <img src="image/logo-nav.png" width="374" height="138" alt="Tierra Santa" class="nav-logo-image" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#offering">Private Journey</a></li>
+      <li><a href="index.html#place">The Place</a></li>
+      <li><a href="index.html#guide">The Guide</a></li>
+      <li><a href="index.html#paths">Retreats</a></li>
+      <li class="nav-lang">
+        <a href="group-retreat.html" class="lang-active">EN</a><span>·</span><a href="group-retreat-de.html">DE</a><span>·</span><a href="group-retreat-es.html">ES</a>
+      </li>
+      <li><a href="#join" class="nav-cta">Reserve</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero hero-photo" id="top" style="background-image: url('image/el_jaguar-web.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">El Jaguar &middot; Retreat 3 &middot; 04. – 14.01.2027 &middot; Max. 8 guests</div>
+      <h1><span class="hero-line">Group Retreat</span><span class="hero-line">El Jaguar</span></h1>
+      <p class="hero-lead">Ancient wisdom passed down through the guardians of this land — held in group energy under the watchful presence of the jaguar.</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-primary">Reserve Your Place</a>
+        <a href="#circle" class="btn-ghost">Discover the Circle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARC TRANSITION -->
+  <div class="earth-arc" aria-hidden="true"></div>
+
+  <!-- THE CIRCLE -->
+  <div class="guide" id="circle">
+    <div class="guide-image-wrap">
+      <div class="guide-image">
+        <img src="image/el_jaguar-web.jpg" width="1600" height="1006" alt="The group gathered at Tierra Santa" />
+        <div class="img-fade"></div>
+      </div>
+    </div>
+    <div class="guide-body fade-up">
+      <div class="section-label">The Circle</div>
+      <h2>Around the fire, as our ancestors did.</h2>
+      <p>We work with the same sacred elements as our individual healing container, yet here the focus is on group energy. We lift each other by honouring our personal stories and sharing the threads of our lives. The sacred tree stands at the heart of the circle; the serpent way teaches us to shed what no longer serves; fire and the untamed spirit of the Osa hold every step.</p>
+    </div>
+  </div>
+
+  <!-- WHAT WE WORK WITH -->
+  <section class="tenets" id="offering">
+    <div class="tenets-intro fade-up">
+      <div class="section-label">What we work with</div>
+      <h2>Sixteen doorways, one fire.</h2>
+      <p>Our days are woven from the practices below — held in the energy of the group, with the finca itself as co-facilitator.</p>
+      <p class="tenets-note">Please understand that the sequence of the individual components depends on my personal decisions during the process, in order to capture the magic of the moment and honor the ongoing interaction with the spirits of the ancestors and nature.</p>
+    </div>
+    <div class="tenets-grid">
+      <div class="tenet fade-up">
+        <div class="tenet-num">01</div>
+        <h3>Zen meditation</h3>
+        <p>Silent sitting that brings the body and mind back to the breath of the forest.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">02</div>
+        <h3>Communication with ancestors</h3>
+        <p>Guided practices to listen to the lineages that walk beside each of us.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">03</div>
+        <h3>Reiki</h3>
+        <p>Hands-on energy work, given and received within the group.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">04</div>
+        <h3>Sound meditation</h3>
+        <p>Drums, singing bowls and the voice of the jungle — a sonic bath that dissolves the boundary between self and the wild.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">05</div>
+        <h3>Yoga</h3>
+        <p>Gentle, breath-led movement adapted to the group on each given day.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">06</div>
+        <h3>Qi Gong</h3>
+        <p>Slow, rooted forms to circulate chi and align with the elements around you.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">07</div>
+        <h3>Jungle walks</h3>
+        <p>Slow, attentive walks through the living rainforest of the Osa Peninsula.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">08</div>
+        <h3>Education on tropical medicinal plants</h3>
+        <p>Learning the names, the uses and the spirits of the plants that grow on the finca.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">09</div>
+        <h3>Earth, fire &amp; water ceremonies</h3>
+        <p>Elemental rituals held in circle — to ground, to release, to renew.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">10</div>
+        <h3>Work with animal spirits</h3>
+        <p>Calling on the guardians of this place — the jaguar, the serpent, the macaw.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">11</div>
+        <h3>Tarot card readings</h3>
+        <p>An intuitive mirror to help name what is already moving within you.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">12</div>
+        <h3>Ayurvedic-inspired cuisine</h3>
+        <p>Nourishing, seasonal meals cooked with love from the garden and the land.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">13</div>
+        <h3>Individual dietary needs</h3>
+        <p>Every plate is adapted to your body, your allergies and your way of eating.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">14</div>
+        <h3>Night hike</h3>
+        <p>Walking the jungle after dark — letting the darkness become a teacher.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">15</div>
+        <h3>Cacao ceremony</h3>
+        <p>An open-hearted ritual with sacred cacao to soften and connect the circle.</p>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">16</div>
+        <h3>Tree &amp; plant spirits of the finca</h3>
+        <p>Encounters with the elder trees and plant beings that hold this land.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN THE CIRCLE -->
+  <section class="contact contact-eljaguar" id="join">
+    <div class="contact-inner fade-up">
+      <div class="section-label">Join the Circle</div>
+      <h2>El Jaguar &middot; 04. – 14.01.2027</h2>
+      <p>Maximum 8 guests. Write to us to reserve your place.</p>
+      <a class="contact-email" href="mailto:hola@tierrasantalodge.com?subject=El%20Jaguar%20%E2%80%94%20Group%20Retreat">
+        hola@tierrasantalodge.com
+      </a>
+      <div class="contact-location">
+        <a href="index.html" style="color:inherit; text-decoration:none;">← Back to Tierra Santa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tierra Santa</div>
+    <ul class="footer-links">
+      <li><a href="index.html#offering">Private Journey</a></li>
+      <li><a href="index.html#place">The Place</a></li>
+      <li><a href="index.html#guide">The Guide</a></li>
+      <li><a href="index.html#paths">Retreats</a></li>
+      <li><a href="#join">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Tierra Santa · All rights reserved</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

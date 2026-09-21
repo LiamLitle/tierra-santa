@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpiritPlanning-Workshop — 5-dimensionale Architektur · Tierra Santa</title>
+  <meta name="description" content="Ein 10-tägiger Intensiv-Workshop zu klassischem Feng Shui, Flying Stars und 5-dimensionaler Architektur. Mit Zertifikat." />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- AMBIENT AUDIO -->
+  <audio id="ambient-audio" loop preload="auto">
+    <source src="image/Bronze_Beneath_the_Leaves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- SOUND TOGGLE -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="Umgebungsklang ein-/ausschalten">
+    <svg id="sound-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path id="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path id="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <span class="sound-dot"></span>
+    <span class="sound-label">Umgebungsklang</span>
+  </button>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index-de.html#home" class="nav-logo-link" aria-label="Tierra Santa — zurück zur Startseite">
+      <img src="image/logo-nav.png" width="374" height="138" alt="Tierra Santa" class="nav-logo-image" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü umschalten" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index-de.html#offering">Private Reise</a></li>
+      <li><a href="index-de.html#place">Der Ort</a></li>
+      <li><a href="index-de.html#guide">Die Begleiterin</a></li>
+      <li><a href="index-de.html#paths">Retreats</a></li>
+      <li class="nav-lang">
+        <a href="spiritplanning.html">EN</a><span>·</span><a href="spiritplanning-de.html" class="lang-active">DE</a><span>·</span><a href="spiritplanning-es.html">ES</a>
+      </li>
+      <li><a href="#join" class="nav-cta">Reservieren</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero hero-photo" id="top" style="background-image: url('image/spiritplanning-web-hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">SpiritPlanning &middot; Seminar 1 &middot; 06. – 16.02.2027 &middot; Max. 8 Teilnehmende</div>
+      <h1><span class="hero-line">SpiritPlanning</span><span class="hero-line">5-Dimensionale Architektur</span></h1>
+      <p class="hero-lead">Zwei 10-tägige Seminare zu klassischem Feng Shui, Flying Stars und 5-dimensionaler Architektur, speziell für Designerinnen, Architekten und Liebhaber heilender Räume konzipiert. Seminar 1 findet an den oben genannten Terminen statt; Seminar 2 folgt im Frühjahr 2027 (Termine werden noch bekannt gegeben).</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-primary">Platz reservieren</a>
+        <a href="#overview" class="btn-ghost">Das Programm entdecken</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARC TRANSITION -->
+  <div class="earth-arc" aria-hidden="true"></div>
+
+  <!-- THE PROGRAM -->
+  <section class="place" id="overview">
+    <div class="place-header">
+      <div>
+        <div class="section-label">Das Programm</div>
+        <h2>Zwei Seminare. Ein vollständiges System.</h2>
+      </div>
+      <p>Dieses Retreat ist speziell für Designerinnen, Architekten und alle Liebhaber guter Umgebungen und heilender Räume konzipiert. Es ist ein tiefgründiger, wissensreicher Workshop, der dir einen Weg zeigt, mit 5-dimensionaler Architektur und Feng Shui in einer zutiefst erfolgreichen Praxis zu arbeiten. Echte Veränderung durch die Schaffung von Harmonie im Lebensumfeld. Mit Zertifikat.</p>
+    </div>
+    <div class="place-images place-images-3">
+      <div class="place-img">
+        <img src="image/spiritplanning-web-academy.jpg" width="214" height="216" alt="Akademiehaus" />
+        <div class="img-fade"></div>
+      </div>
+      <div class="place-img">
+        <img src="image/spiritplanning-web-interior.jpg" width="1287" height="1400" alt="Innenraum" />
+        <div class="img-fade"></div>
+      </div>
+      <div class="place-img">
+        <img src="image/spiritplanning-web-desk.jpg" width="340" height="221" alt="Schreibtisch" />
+        <div class="img-fade"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEMINAR SUMMARY CARDS -->
+  <section class="tenets" id="seminars">
+    <div class="tenets-intro fade-up">
+      <div class="section-label">Die Seminare</div>
+      <h2>Seminar 1 &amp; Seminar 2</h2>
+    </div>
+    <div class="tenets-grid tenets-grid-2">
+      <div class="tenet fade-up">
+        <div class="tenet-num">Seminar 1 &middot; 06.–16.02.2027</div>
+        <h3>Grundlagen des klassischen Feng Shui</h3>
+        <p>Das vollständige Fundament — Terminologie, Trigramme, die fünf Elemente, Gua-Berechnung und deine ersten Flying-Star-Karten. Ein 10-tägiges Eintauchen in die lebendige Sprache des Raumes.</p>
+        <ul class="dash-list">
+          <li>Chi, Tao, Tai Chi, Ba Gua</li>
+          <li>8 Trigramme &amp; 64 Hexagramme</li>
+          <li>5 Elemente &amp; 3 Zyklen</li>
+          <li>Lo Shu &amp; 24 Berge</li>
+          <li>Gua-Berechnung &amp; Flying-Star-Karten</li>
+        </ul>
+      </div>
+      <div class="tenet fade-up">
+        <div class="tenet-num">Seminar 2 &middot; Frühjahr 2027</div>
+        <h3>SpiritPlanning&reg; BASIC Combination</h3>
+        <p>Die fortgeschrittene Praxis — die Kombination von Pa Chai und Flying Stars zum SpiritPlanning&reg;-System. Zehn Tage Fallstudien, Peer-Beratung und Anwendung in der Praxis.</p>
+        <ul class="dash-list">
+          <li>Die 4 Arten von Glück &amp; Unglück</li>
+          <li>Wasser- &amp; Bergsterne</li>
+          <li>Die 81 Kombinationen</li>
+          <li>Feldstudien an realen Immobilien</li>
+          <li>Praxis der Peer-Beratung</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEMINAR 1 · DETAILED CURRICULUM -->
+  <section class="curriculum" id="seminar1">
+    <div class="curriculum-intro fade-up">
+      <div class="section-label">Seminar 1 &middot; 10 Tage</div>
+      <h2>Grundlagen des klassischen Feng Shui.</h2>
+    </div>
+
+    <div class="curriculum-block">
+      <h3>Grundlagen und Begriffe</h3>
+      <div class="curriculum-groups">
+        <div class="curriculum-group">
+          <h4>Kernkonzepte</h4>
+          <ul class="dash-list">
+            <li>Chi</li>
+            <li>Tao — der heilige Weg</li>
+            <li>Ba Gua</li>
+            <li>8 Trigramme — Früher Himmel &amp; Später Himmel</li>
+          </ul>
+        </div>
+        <div class="curriculum-group">
+          <h4>Übungen</h4>
+          <ul class="dash-list">
+            <li>Die 8 Trigramme zeichnen</li>
+            <li>Tian-Di-Ren — die Geschichte</li>
+            <li>Die 5 Elemente mit den 3 Zyklen (Wandlungsphasen)</li>
+            <li>Eigenschaften der 5 Elemente</li>
+            <li>Die 3 Zyklen kennenlernen und verstehen</li>
+          </ul>
+        </div>
+        <div class="curriculum-group">
+          <h4>Die 9 Paläste</h4>
+          <ul class="dash-list">
+            <li>Pa Chai — die 9 Paläste</li>
+            <li>Lo Shu — die Geschichte</li>
+            <li>Zuordnung der Trigramme zu den Himmelsrichtungen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="curriculum-block">
+      <h3>Gua-Berechnung &amp; Kartenerstellung</h3>
+      <div class="curriculum-groups">
+        <div class="curriculum-group">
+          <h4>Berechnung</h4>
+          <ul class="dash-list">
+            <li>Ost-Gruppe / West-Gruppe</li>
+            <li>Tai Chi im Grundriss</li>
+          </ul>
+        </div>
+        <div class="curriculum-group">
+          <h4>Praktische Übungen</h4>
+          <ul class="dash-list">
+            <li>Das Haus von Herrn Sommer — Übung</li>
+            <li>Räume im Grundriss nach Bewohnern klassifizieren</li>
+            <li>Grundlegende Karten für die Perioden 7, 8 und 9 erstellen (ohne Flying Stars)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="curriculum-objective">Lernziel: Die neun Paläste verstehen, die Zahlen verstehen und Sicherheit im Umgang mit den grundlegenden Karten gewinnen.</p>
+    </div>
+
+    <div class="curriculum-block">
+      <h3>Facing, Sitting &amp; die 24 Berge</h3>
+      <div class="curriculum-groups">
+        <div class="curriculum-group">
+          <h4>Richtungstheorie</h4>
+          <ul class="dash-list">
+            <li>Facing — Sitting: Bedeutung und Anwendung</li>
+            <li>Die 24 Berge des Luo Pan</li>
+            <li>Eigenschaften jedes Berges</li>
+            <li>Chinesische Schriftzeichen — schreiben lernen</li>
+            <li>Das Yin und Yang der 24 Berge</li>
+          </ul>
+        </div>
+        <div class="curriculum-group">
+          <h4>Feldstudien</h4>
+          <ul class="dash-list">
+            <li>Facing-Richtungen an realen Immobilien messen</li>
+            <li>Erste praktische Anwendung der Prinzipien in einem Raum</li>
+          </ul>
+        </div>
+        <div class="curriculum-group">
+          <h4>Fortgeschrittene Kartenerstellung</h4>
+          <ul class="dash-list">
+            <li>Karten mit Facing und Sitting erstellen</li>
+            <li>Die Flugrichtung der Sterne</li>
+            <li>Die Karten auf einen Grundriss übertragen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEMINAR 2 · DETAILED CURRICULUM -->
+  <section class="curriculum" id="seminar2" style="padding-top: 0;">
+    <div class="curriculum-intro fade-up">
+      <div class="section-label">Seminar 2 &middot; 10 Tage &middot; Frühjahr 2027</div>
+      <h2>SpiritPlanning&reg; BASIC Combination.</h2>
+      <p style="font-family:'Cormorant Garamond', serif; color: var(--text-dark-muted); margin-top: -8px;">Ein praxisorientiertes Aufbauseminar, das Pa Chai und Flying Stars kombiniert. Anwendungsbeispiele im Training, reale Fallstudien und deine erste Peer-Beratung. Termine für Frühjahr 2027 werden in Kürze bekannt gegeben.</p>
+    </div>
+
+    <div class="photo-grid photo-grid-4">
+      <figure class="photo-grid-item">
+        <img src="image/spiritplanning-web-exterior.jpg" width="215" height="216" alt="Reetgedeckte Dachlinie und handgeschnitzte Holzgeometrie" />
+        <figcaption>Reetgedeckte Dachlinie und handgeschnitzte Holzgeometrie</figcaption>
+      </figure>
+      <figure class="photo-grid-item">
+        <img src="image/spiritplanning-web-window.jpg" width="217" height="219" alt="Rautenförmiges Fenster — heilige Geometrie im Detail" />
+        <figcaption>Rautenförmiges Fenster — heilige Geometrie im Detail</figcaption>
+      </figure>
+      <figure class="photo-grid-item">
+        <img src="image/spiritplanning-web-firepit.jpg" width="214" height="214" alt="Glasumrandete Feuerstelle im Seminarpavillon" />
+        <figcaption>Glasumrandete Feuerstelle im Seminarpavillon</figcaption>
+      </figure>
+      <figure class="photo-grid-item">
+        <img src="image/spiritplanning-web-sunset.jpg" width="339" height="219" alt="Ein Akademiehaus bei Sonnenuntergang, eingebettet in den Dschungel" />
+        <figcaption>Ein Akademiehaus bei Sonnenuntergang, eingebettet in den Dschungel</figcaption>
+      </figure>
+    </div>
+
+    <div class="curriculum-block">
+      <h3>Rückblick, Austausch &amp; Pa Chai</h3>
+      <div class="curriculum-groups">
+        <div class="curriculum-group">
+          <h4>Aufwärmen aus Seminar 1</h4>
+          <ul class="dash-list">
+            <li>Chi &middot; Tao &middot; Tai Chi &middot; Ba Gua</li>
+            <li>8 Trigramme &middot; 64 Hexagramme</li>
+            <li>24 Berge &middot; Tian-Di-Ren</li>
+            <li>5 Elemente &middot; Lo Shu &middot; Lebens-Gua</li>
+          </ul>
+          <p class="curriculum-note">Erfahrungsaustausch zwischen den Teilnehmenden zur praktischen Arbeit mit Kunden und Bauherren.</p>
+          <p class="curriculum-note">Lernziel: Praktischer Austausch, Wiederholung und Vertiefung des Gelernten.</p>
+        </div>
+        <div class="curriculum-group">
+          <h4>Pa Chai</h4>
+          <ul class="dash-list">
+            <li>Die 4 Arten von Glück</li>
+            <li>Die 4 Arten von Unglück</li>
+            <li>Das Geheimnis der Bewertung der einzelnen Richtungen für jedes Gua</li>
+            <li>Die Formation ableiten</li>
+          </ul>
+          <p class="curriculum-note">Übung: Die Bewertungen anhand eines Gua-Beispiels ableiten.</p>
+          <p class="curriculum-note">Lernziel: Pa Chai kennenlernen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="curriculum-block">
+      <h3>Flying Stars &amp; Immobilienklassifizierung</h3>
+      <div class="curriculum-groups">
+        <div class="curriculum-group">
+          <h4>Flying Stars</h4>
+          <ul class="dash-list">
+            <li>Die Bedeutung von Wasser- und Bergsternen</li>
+            <li>Die 81 Kombinationen</li>
+            <li>Die 9 Perioden</li>
+          </ul>
+          <p class="curriculum-note">Übung: Karten erstellen.</p>
+          <p class="curriculum-note">Lernziel: Karten auswerten.</p>
+        </div>
+        <div class="curriculum-group">
+          <h4>Immobilienklassifizierung</h4>
+          <ul class="dash-list">
+            <li>Eine Immobilie korrekt einer Periode zuordnen</li>
+            <li>Facing und Sitting</li>
+            <li>Chi-Verteilung</li>
+          </ul>
+          <p class="curriculum-note">Übung: Das Haus von Herrn Sommer.</p>
+          <p class="curriculum-note">Lernziel: Räume im Grundriss nach Bewohnern klassifizieren.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="curriculum-block">
+      <h3>Integration &amp; erste Feldanwendung</h3>
+      <div class="curriculum-groups">
+        <div class="curriculum-group">
+          <h4>Dein eigener Grundriss</h4>
+          <p class="curriculum-note">Übung: Eine Karte auf Basis deines eigenen Grundrisses erstellen.</p>
+          <p class="curriculum-note">Lernziel: Pa Chai und Flying Stars integrieren.</p>
+        </div>
+        <div class="curriculum-group">
+          <h4>Praktische Anwendung</h4>
+          <ul class="dash-list">
+            <li>Eine Innenarchitektur-Beratung in der Praxis entwickeln</li>
+            <li>Feldstudien: Eine Immobilie vermessen und auswerten</li>
+          </ul>
+          <p class="curriculum-note">Lernziel: Erste praktische Anwendung der Prinzipien der SpiritPlanning&reg;-BASIC-Combination in einem Raum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="curriculum-block">
+      <h3>Fallstudien &amp; Peer-Beratung</h3>
+      <div class="curriculum-groups">
+        <div class="curriculum-group">
+          <h4>Praxisfälle</h4>
+          <ul class="dash-list">
+            <li>Reale Fallstudien von Kathrin Schmack</li>
+            <li>Tipps zu Beratungsprozessen</li>
+          </ul>
+          <p class="curriculum-note">Lernziel: Praktische Tipps lernen.</p>
+        </div>
+        <div class="curriculum-group">
+          <h4>Peer-Beratung</h4>
+          <ul class="dash-list">
+            <li>Die Karte für deine Sitznachbarin oder deinen Sitznachbarn erstellen</li>
+            <li>Sie oder ihn zu möglichen Optimierungen beraten</li>
+          </ul>
+          <p class="curriculum-note">Lernziel: Mit dem Grundriss einer anderen Person arbeiten.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="curriculum-block">
+      <h3>Ausflüge zu alten indigenen Stätten</h3>
+      <p class="curriculum-lede">Im Rahmen des Seminars besuchen wir heilige Stätten des indigenen Erbes Costa Ricas — lebendige Feldstudien, die die Prinzipien von SpiritPlanning&reg; mit der Weisheit des Landes verbinden. Darunter: ein uraltes Tor, ausgerichtet an der Orion-Formation, und Finca 6, eine UNESCO-Welterbestätte, Heimat der mysteriösen präkolumbianischen Steinkugeln der Diquís-Kultur.</p>
+      <div class="photo-grid photo-grid-2">
+        <figure class="photo-grid-item">
+          <img src="image/spiritplanning-web-spheres.jpg" width="1400" height="843" alt="Finca 6 — die Steinkugeln der Diquís" />
+          <figcaption>Finca 6 — die Steinkugeln der Diquís</figcaption>
+        </figure>
+        <figure class="photo-grid-item">
+          <img src="image/spiritplanning-web-gateway.jpg" width="1050" height="1400" alt="Ein heiliges geschnitztes Tor im Dschungel" />
+          <figcaption>Ein heiliges geschnitztes Tor im Dschungel</figcaption>
+        </figure>
+      </div>
+      <p class="curriculum-objective">Lernziel: Den Dialog zwischen der Geomantie der Ahnen, kosmischer Ausrichtung und den erlernten Prinzipien erfahren.</p>
+    </div>
+  </section>
+
+  <!-- CERTIFICATE -->
+  <div class="guide" id="certificate">
+    <div class="guide-image-wrap">
+      <div class="guide-image">
+        <img src="image/spiritplanning-web-night.jpg" width="2016" height="2100" alt="Akademiehaus bei Nacht" />
+        <div class="img-fade"></div>
+      </div>
+    </div>
+    <div class="guide-body fade-up">
+      <div class="section-label">Zertifikat</div>
+      <h2>Eine Fähigkeit, die du mit nach Hause nimmst.</h2>
+      <p>Nach Abschluss beider Seminare erhältst du ein Zertifikat in klassischem Feng Shui und der SpiritPlanning&reg;-BASIC-Combination — eine Qualifikation, die dir den Weg öffnet, mit Kunden, Bauherren und Räumen auf neue Weise zu arbeiten.</p>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">20</div>
+          <div class="stat-label">Gesamttage der Ausbildung</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Seminare mit Zertifikat</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">&infin;</div>
+          <div class="stat-label">Anwendungen im Alltag</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESERVE YOUR SPOT -->
+  <section class="contact contact-spiritplanning" id="join">
+    <div class="contact-inner fade-up">
+      <div class="section-label">Platz reservieren</div>
+      <h2>Bereit, deine Sicht auf Räume zu verändern?</h2>
+      <p>Seminar 1 findet vom 06. – 16.02.2027 in Tierra Santa, Costa Rica, statt. Seminar 2 folgt im Frühjahr 2027 — Termine werden noch bekannt gegeben. Die Plätze sind auf 8 Teilnehmende begrenzt.</p>
+      <a class="contact-email" href="mailto:hola@tierrasantalodge.com?subject=SpiritPlanning-Workshop-Reservierung">
+        hola@tierrasantalodge.com
+      </a>
+      <div class="contact-location">
+        <a href="index-de.html" style="color:inherit; text-decoration:none;">← Zurück zu Tierra Santa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tierra Santa</div>
+    <ul class="footer-links">
+      <li><a href="index-de.html#offering">Private Reise</a></li>
+      <li><a href="index-de.html#place">Der Ort</a></li>
+      <li><a href="index-de.html#guide">Die Begleiterin</a></li>
+      <li><a href="index-de.html#paths">Retreats</a></li>
+      <li><a href="#join">Kontakt</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Tierra Santa · Alle Rechte vorbehalten</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
