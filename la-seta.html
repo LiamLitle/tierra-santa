@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Seta — Junglekitchen · Tierra Santa Reconnect</title>
+  <meta name="description" content="La Seta — The Sacred Internet of Nature on Your Plate. An ultra-local fine dining experience at Tierra Santa Reconnect, Osa Peninsula, Costa Rica." />
+  <link rel="icon" type="image/png" href="image/favicon-junglekitchen-transparent/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="image/favicon-junglekitchen-transparent/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="image/favicon-junglekitchen-transparent/apple-touch-icon.png" />
+  <link rel="manifest" href="image/favicon-junglekitchen-transparent/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+  <style>
+    /* La Seta — warm, candlelit accent for this page only */
+    .la-seta-hero { background-color: #1A140D; }
+    .dish-name { color: var(--sacred-earth); font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <!-- AMBIENT AUDIO -->
+  <audio id="ambient-audio" loop preload="auto">
+    <source src="image/Bronze_Beneath_the_Leaves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- SOUND TOGGLE -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="Toggle ambient sound">
+    <svg id="sound-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path id="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path id="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <span class="sound-dot"></span>
+    <span class="sound-label">Ambient Sound</span>
+  </button>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html#home" class="nav-logo-link" aria-label="Tierra Santa Reconnect — back to home">
+      <img src="image/tierra-santa-full-logo-nav.png" width="621" height="747" alt="Tierra Santa Reconnect" class="nav-logo-image" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#offering">Private Journey</a></li>
+      <li><a href="the-sanctuary.html">The Sanctuary</a></li>
+      <li><a href="index.html#guide">The Guide</a></li>
+      <li><a href="index.html#paths">Retreats</a></li>
+      <li><a href="la-seta.html">La Seta</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li class="nav-lang">
+        <a href="la-seta.html" class="lang-active">EN</a><span>·</span><a href="la-seta-de.html">DE</a><span>·</span><a href="la-seta-es.html">ES</a>
+      </li>
+      <li><a href="#table" class="nav-cta">Request a Table</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <!-- PLACEHOLDER — no restaurant/pavilion photos exist yet in /image; using a jungle
+       architecture shot as a stand-in background. Swap for real La Seta photos (the
+       candlelit jungle pavilion, plated dishes) once Kathrin sends them. -->
+  <section class="hero hero-photo la-seta-hero" id="top" style="background-image: url('image/villas-web-6.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">La Seta &middot; Junglekitchen</div>
+      <h1><span class="hero-line">The Sacred Internet</span><span class="hero-line">of Nature on Your Plate</span></h1>
+      <p class="hero-lead">An ultra-local fine dining experience, a few meters from our organic garden — traditional Costa Rican flavors elevated through an Ayurveda-inspired lens.</p>
+      <div class="hero-actions">
+        <a href="#table" class="btn-primary">Request a Table</a>
+        <a href="index.html" class="btn-ghost">← Back to Tierra Santa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARC TRANSITION -->
+  <div class="earth-arc" aria-hidden="true"></div>
+
+  <!-- INTRO -->
+  <section class="curriculum">
+    <div class="curriculum-intro fade-up">
+      <div class="section-label">La Seta — Junglekitchen</div>
+      <h2>Named after the mystical mushroom.</h2>
+      <p style="font-family:'Cormorant Garamond', serif; max-width:640px; margin:0 auto;">La Seta — the ultimate connector of the earth — is an ultra-local culinary experience. The kitchen sits a few meters from our organic garden and elevates traditional Costa Rican flavors into Ayurveda-inspired fine dining. The menu doesn't follow trends: it's a fixed selection of signature dishes, prepared with ingredients of absolute freshness.</p>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="curriculum" style="padding-top:0;">
+    <div class="curriculum-block fade-up">
+      <h3>Entrées</h3>
+      <ul class="dash-list">
+        <li><span class="dish-name">The Ritual</span> — Mini Tortillas Aliñadas: traditional corn tortillas with fresh garden herbs, hand-whipped botanical butter.</li>
+        <li><span class="dish-name">The Soul</span> — "La Seta" Mushroom Essence: a deep umami broth poured over pan-seared jungle mushrooms and a sacred basil leaf.</li>
+        <li><span class="dish-name">The Geometry</span> — The Ratatouille Papaya Salad: layers of green papaya, sweet orange papaya and aged parmesan, lime-honey emulsion and crushed red chili.</li>
+      </ul>
+    </div>
+    <div class="curriculum-block fade-up">
+      <h3>Plats</h3>
+      <ul class="dash-list">
+        <li><span class="dish-name">Mahi-Mahi "Golfo Dulce"</span> — crispy fillet, local chayote-carrot picadillo, lemongrass-infused rice.</li>
+        <li><span class="dish-name">Pollo Encebollado Extremo</span> — slow-braised chicken, tomato-chili reduction, oven-baked yuca-coconut cakes and plantain chips.</li>
+        <li><span class="dish-name">Beef Filet "Chicharrones Style"</span> — fried beef fillet pieces, spiced corn breading, jungle herb and red pepper chimichurri, yuca-coconut cakes.</li>
+      </ul>
+    </div>
+    <div class="curriculum-block fade-up">
+      <h3>Dessert</h3>
+      <ul class="dash-list">
+        <li><span class="dish-name">The Divine Abundance</span> — Tres Leches Rice Pudding with a fresh mango-papaya stew and dark chocolate ice cream made with indigenous cacao.</li>
+      </ul>
+    </div>
+    <p class="curriculum-objective" style="text-align:center; max-width:640px; margin-left:auto; margin-right:auto;">All dinners are served in the open jungle pavilion, by candlelight. Reservation required.</p>
+  </section>
+
+  <!-- REQUEST A TABLE -->
+  <section class="contact" id="table">
+    <div class="contact-inner fade-up">
+      <div class="section-label">Reservation Required</div>
+      <h2>Request a Table.</h2>
+      <p>Write to us with your dates and party size — we'll confirm your evening at La Seta.</p>
+      <a class="contact-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hola@tierrasantalodge.com&amp;su=La%20Seta%20%E2%80%94%20Table%20Request" target="_blank" rel="noopener">
+        hola@tierrasantalodge.com
+      </a>
+      <a class="contact-email" href="https://wa.me/491735373338" target="_blank" rel="noopener" style="display:block; margin-top:14px; font-size:18px;">WhatsApp +49 173 5373338</a>
+      <div class="contact-location">
+        <a href="index.html" style="color:inherit; text-decoration:none;">← Back to Tierra Santa Reconnect</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tierra Santa<span class="footer-logo-sub">Reconnect</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html#offering">Private Journey</a></li>
+      <li><a href="the-sanctuary.html">The Sanctuary</a></li>
+      <li><a href="index.html#guide">The Guide</a></li>
+      <li><a href="index.html#paths">Retreats</a></li>
+      <li><a href="#table">Contact</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Tierra Santa Reconnect · All rights reserved</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
