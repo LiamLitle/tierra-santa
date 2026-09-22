@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="image/favicon-jungelkitchen/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="96x96" href="image/favicon-jungelkitchen/favicon-96x96.png" />
+  <link rel="icon" type="image/svg+xml" href="image/favicon-jungelkitchen/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="image/favicon-jungelkitchen/apple-touch-icon.png" />
+  <link rel="manifest" href="image/favicon-jungelkitchen/site.webmanifest" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Seta — Junglekitchen · Tierra Santa Reconnect</title>
+  <meta name="description" content="La Seta — Das heilige Netzwerk der Natur auf deinem Teller. Ein ultra-lokales Fine-Dining-Erlebnis bei Tierra Santa Reconnect, Halbinsel Osa, Costa Rica." />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+  <style>
+    /* La Seta — warm, candlelit accent for this page only */
+    .la-seta-hero { background-color: #1A140D; }
+    .dish-name { color: var(--sacred-earth); font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <!-- AMBIENT AUDIO -->
+  <audio id="ambient-audio" loop preload="auto">
+    <source src="image/Bronze_Beneath_the_Leaves.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- SOUND TOGGLE -->
+  <button class="sound-toggle" id="sound-toggle" aria-label="Umgebungsklang ein-/ausschalten">
+    <svg id="sound-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path id="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path id="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <span class="sound-dot"></span>
+    <span class="sound-label">Umgebungsklang</span>
+  </button>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index-de.html#home" class="nav-logo-link" aria-label="Tierra Santa Reconnect — zurück zur Startseite">
+      <img src="image/tierra-santa-full-logo-nav.png" width="621" height="747" alt="Tierra Santa Reconnect" class="nav-logo-image" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü umschalten" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index-de.html#offering">Private Reise</a></li>
+      <li><a href="the-sanctuary-de.html">Das Heiligtum</a></li>
+      <li><a href="index-de.html#guide">Die Begleiterin</a></li>
+      <li><a href="index-de.html#paths">Retreats</a></li>
+      <li><a href="la-seta-de.html">La Seta</a></li>
+      <li><a href="gallery-de.html">Galerie</a></li>
+      <li class="nav-lang">
+        <a href="la-seta.html">EN</a><span>·</span><a href="la-seta-de.html" class="lang-active">DE</a><span>·</span><a href="la-seta-es.html">ES</a>
+      </li>
+      <li><a href="#table" class="nav-cta">Tisch anfragen</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <!-- PLATZHALTER — es gibt noch keine Restaurant-/Pavillon-Fotos in /image; ein Bild der
+       Dschungelarchitektur dient vorübergehend als Hintergrund. Sobald Kathrin echte
+       La-Seta-Fotos (der kerzenbeleuchtete Dschungelpavillon, angerichtete Gerichte)
+       schickt, hier ersetzen. -->
+  <section class="hero hero-photo la-seta-hero" id="top" style="background-image: url('image/villas-web-6.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">La Seta &middot; Junglekitchen</div>
+      <h1><span class="hero-line">Das heilige Netzwerk</span><span class="hero-line">der Natur auf deinem Teller</span></h1>
+      <p class="hero-lead">Ein ultra-lokales Fine-Dining-Erlebnis, wenige Meter von unserem biologischen Garten entfernt — traditionelle costa-ricanische Aromen, veredelt durch eine Ayurveda-inspirierte Linse.</p>
+      <div class="hero-actions">
+        <a href="#table" class="btn-primary">Tisch anfragen</a>
+        <a href="index-de.html" class="btn-ghost">← Zurück zu Tierra Santa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARC TRANSITION -->
+  <div class="earth-arc" aria-hidden="true"></div>
+
+  <!-- INTRO -->
+  <section class="curriculum">
+    <div class="curriculum-intro fade-up">
+      <div class="section-label">La Seta — Junglekitchen</div>
+      <h2>Benannt nach dem mystischen Pilz.</h2>
+      <p style="font-family:'Cormorant Garamond', serif; max-width:640px; margin:0 auto;">La Seta — die ultimative Verbindung zur Erde — ist ein ultra-lokales kulinarisches Erlebnis. Die Küche liegt wenige Meter von unserem biologischen Garten entfernt und veredelt traditionelle costa-ricanische Aromen zu Ayurveda-inspiriertem Fine Dining. Die Speisekarte folgt keinen Trends: Sie ist eine feste Auswahl an Signature-Gerichten, zubereitet mit Zutaten von absoluter Frische.</p>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="curriculum" style="padding-top:0;">
+    <div class="curriculum-block fade-up">
+      <h3>Entrées</h3>
+      <ul class="dash-list">
+        <li><span class="dish-name">The Ritual</span> — Mini Tortillas Aliñadas: traditionelle Maistortillas mit frischen Gartenkräutern, handgeschlagener botanischer Butter.</li>
+        <li><span class="dish-name">The Soul</span> — "La Seta"-Pilzessenz: eine tiefe Umami-Brühe, gegossen über pfannengebratene Dschungelpilze und ein heiliges Basilikumblatt.</li>
+        <li><span class="dish-name">The Geometry</span> — Der Ratatouille-Papaya-Salat: Schichten aus grüner Papaya, süßer oranger Papaya und gereiftem Parmesan, Limette-Honig-Emulsion und zerstoßener roter Chili.</li>
+      </ul>
+    </div>
+    <div class="curriculum-block fade-up">
+      <h3>Plats</h3>
+      <ul class="dash-list">
+        <li><span class="dish-name">Mahi-Mahi "Golfo Dulce"</span> — knuspriges Filet, lokales Chayote-Karotten-Picadillo, mit Zitronengras aromatisierter Reis.</li>
+        <li><span class="dish-name">Pollo Encebollado Extremo</span> — langsam geschmortes Hähnchen, Tomaten-Chili-Reduktion, im Ofen gebackene Yuca-Kokos-Küchlein und Kochbananenchips.</li>
+        <li><span class="dish-name">Beef Filet "Chicharrones Style"</span> — frittierte Rinderfiletstücke, gewürzte Mais-Panade, Dschungelkräuter-Rotpaprika-Chimichurri, Yuca-Kokos-Küchlein.</li>
+      </ul>
+    </div>
+    <div class="curriculum-block fade-up">
+      <h3>Dessert</h3>
+      <ul class="dash-list">
+        <li><span class="dish-name">The Divine Abundance</span> — Tres-Leches-Reispudding mit einem frischen Mango-Papaya-Kompott und dunklem Schokoladeneis aus einheimischem Kakao.</li>
+      </ul>
+    </div>
+    <p class="curriculum-objective" style="text-align:center; max-width:640px; margin-left:auto; margin-right:auto;">Alle Abendessen werden im offenen Dschungelpavillon bei Kerzenschein serviert. Reservierung erforderlich.</p>
+  </section>
+
+  <!-- REQUEST A TABLE -->
+  <section class="contact" id="table">
+    <div class="contact-inner fade-up">
+      <div class="section-label">Reservierung erforderlich</div>
+      <h2>Tisch anfragen.</h2>
+      <p>Schreib uns mit deinen Wunschterminen und der Personenzahl — wir bestätigen deinen Abend bei La Seta.</p>
+      <a class="contact-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hola@tierrasantalodge.com&amp;su=La%20Seta%20%E2%80%94%20Table%20Request" target="_blank" rel="noopener">
+        hola@tierrasantalodge.com
+      </a>
+      <a class="contact-email" href="https://wa.me/491735373338" target="_blank" rel="noopener" style="display:block; margin-top:14px; font-size:18px;">WhatsApp +49 173 5373338</a>
+      <div class="contact-location">
+        <a href="index-de.html" style="color:inherit; text-decoration:none;">← Zurück zu Tierra Santa Reconnect</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tierra Santa<span class="footer-logo-sub">Reconnect</span></div>
+    <ul class="footer-links">
+      <li><a href="index-de.html#offering">Private Reise</a></li>
+      <li><a href="the-sanctuary-de.html">Das Heiligtum</a></li>
+      <li><a href="index-de.html#guide">Die Begleiterin</a></li>
+      <li><a href="index-de.html#paths">Retreats</a></li>
+      <li><a href="#table">Kontakt</a></li>
+      <li><a href="gallery-de.html">Galerie</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Tierra Santa Reconnect · Alle Rechte vorbehalten</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
